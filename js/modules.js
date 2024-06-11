@@ -44,7 +44,6 @@ export function pintarCheckbox (arregloCategorias, lugar) {
 //funcion que filtra el arreglo con respecto a las filtros del usuarios
 export function filtar(text,data,lugar){
     let checkboxTrue = document.querySelectorAll("input[type=checkbox]:checked");
-  
     if (checkboxTrue.length == 0 && text == "") {
       pintarTarjetas(data.events, lugar);
     } else if (checkboxTrue.length != 0 && text == "") {

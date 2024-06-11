@@ -1,7 +1,6 @@
 fetch("https://aulamindhub.github.io/amazing-api/events.json")
 .then(res => res.json())
 .then(data => {
-  console.log(data);
   let id = window.location.href;
   id = new URL(id).searchParams.get("id");
   let contenedor = document.getElementById("contenedorEvento");

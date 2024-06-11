@@ -4,7 +4,6 @@ let tbodyPast = document.getElementById("tbodyPast");
 fetch("https://aulamindhub.github.io/amazing-api/events.json")
   .then((res) => res.json())
   .then((data) => {
-    console.log(data);
     let eventoMayorAsistencia = eventoMayorPorcentajeAsistencia(data.events);
     let eventoMenorAsistencia = eventoMenorPorcentajeAsistencia(data.events);
     let eventoConMayorCapacidad = eventoMayorCapacidad(data.events);
@@ -170,7 +169,7 @@ function pintarEstadisticas(listaCategoria, lugar){
         lugar.innerHTML += `
         <tr>
             <td>${categoria.name}</td>
-            <td>$ ${categoria.ingresos} =</td>
+            <td>$ ${new Intl.NumberFormat().format(categoria.ingresos)} =</td>
             <td>${categoria.porcentajeAsistencia.toFixed(2)}%</td>
         </tr>
         `;
